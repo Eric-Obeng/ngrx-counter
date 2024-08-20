@@ -1,13 +1,17 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { increment, decrement, reset } from './counter.actions';
+import { increment, decrement, reset, setCount } from './counter.actions';
 
-export const initialState = 0;
+const initialState = () => {
+  const savedCount = localStorage.getItem('counter');
+  return savedCount !== null ? +savedCount : 0;
+};
 
 const _CounterReducer = createReducer(
-  initialState,
+  initialState(),
   on(increment, (state) => state + 1),
   on(decrement, (state) => state - 1),
-  on(reset, () => initialState)
+  on(reset, () => 0),
+  on(setCount, (_, { count }) => count)
 );
 
 export function counterReducer(state: number | undefined, action: Action) {
