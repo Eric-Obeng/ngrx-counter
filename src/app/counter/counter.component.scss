@@ -39,27 +39,46 @@
       font-size: 10rem;
     }
   }
-
   .col-2 {
+    display: flex;
+    flex-direction: column;
     width: 25rem;
-    animation: resetAnimate 2s ease-in-out;
+    gap: 0.8rem;
 
-    .reset {
-      width: 100%;
-      padding: 0.8rem;
+    input {
+      height: 4rem;
+      font-size: 3rem;
+      border: .3rem solid #00bfff;
       border-radius: 1.5rem;
-      font-family: inherit;
-      font-size: 2.2rem;
-      border: none;
-      cursor: pointer;
-      background-color: #ff4500;
-      color: #fff;
-      transition: all .3s ease-in-out;
+      padding-left: 0.5rem;
 
-      &:hover {
-        background-color: #00bfff;
+      &:focus {
+        outline: none;
+        border-color: #ff4500;
       }
     }
+  }
+
+  .col-3 {
+    width: 25rem;
+    animation: resetAnimate 2s ease-in-out;
+  }
+}
+
+.reset {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 1.5rem;
+  font-family: inherit;
+  font-size: 2.2rem;
+  border: none;
+  cursor: pointer;
+  background-color: #ff4500;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #00bfff;
   }
 }
 
