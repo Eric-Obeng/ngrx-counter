@@ -1,0 +1,13 @@
+<div class="counter-container">
+  <div class="col-1">
+    <button class="decrease" (click)="decrement()">-</button>
+    <p class="number">{{ count$ | async }}</p>
+    <button class="increase" (click)="increment()">+</button>
+  </div>
+  <div class="col-2">
+    @if ((count$ | async) !== 0 ) {
+
+    <button class="reset" (click)="reset()">Reset</button>
+    }
+  </div>
+</div>
